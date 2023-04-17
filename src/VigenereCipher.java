@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class VigenereCipher {
+public class VigenereCipher extends Cipher {
 	
 	private ArrayList<CaesarCipher> subCiphers;
 	
