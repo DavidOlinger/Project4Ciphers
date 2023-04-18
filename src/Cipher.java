@@ -1,19 +1,29 @@
-public class Cipher {
+import java.util.Scanner;
 
-    public char encrypt(char c){
-        return c; //stub
-    }
+public abstract class Cipher {
 
-    public char decrypt(char c){
-        return c; //stub
-    }
+    public abstract char encrypt(char c);
+
+    public abstract char decrypt(char c);
 
     public String encrypt(String s){
-        return s; //stub
+        Scanner scnr = new Scanner(s);
+        scnr.useDelimiter("");
+        String newMessage = "";
+        while (scnr.hasNext()){
+            newMessage += encrypt(scnr.next().charAt(0));
+        }
+        return newMessage;
     }
 
     public String decrypt(String s){
-        return s; //stub
+        Scanner scnr = new Scanner(s);
+        scnr.useDelimiter("");
+        String newMessage = "";
+        while (scnr.hasNext()){
+            newMessage += decrypt(scnr.next().charAt(0));
+        }
+        return newMessage;
     }
 
     public Cipher newCopy(){
