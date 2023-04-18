@@ -26,8 +26,6 @@ public abstract class Cipher {
         return newMessage;
     }
 
-    public Cipher newCopy(){
-        return null; // stub
-    }
+    public abstract Cipher newCopy();
 
 }
