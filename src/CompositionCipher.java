@@ -27,7 +27,7 @@ public class CompositionCipher extends Cipher {
     public char decrypt(char c){
     if(Character.isAlphabetic(c)){
         for (int i = 0; i < ciphers.size(); i++) {
-            c = ciphers.get(i).encrypt(c);
+            c = ciphers.get(i).decrypt(c);
         }
         return c;
     }

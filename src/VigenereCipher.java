@@ -27,7 +27,7 @@ public class VigenereCipher extends Cipher {
 		this.nextIndexForDecrypt = other.nextIndexForDecrypt;
 		this.nextIndexForEncrypt = other.nextIndexForEncrypt;
 		for (int i = 0; i < other.subCiphers.size(); i++) {
-			this.subCiphers.add(other.subCiphers.get(i).newCopy());
+			this.subCiphers.add(other.subCiphers.get(i));
 		}
 	}
 	
