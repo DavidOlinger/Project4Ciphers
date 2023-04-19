@@ -17,13 +17,10 @@ public class CompositionCipher extends Cipher {
 @Override
     public char encrypt(char c){
 
-    if(Character.isAlphabetic(c)){
         for (int i = 0; i < ciphers.size(); i++) {
             c = ciphers.get(i).encrypt(c);
         }
         return c;
-    }
-    else return c;
 
     }
 @Override
