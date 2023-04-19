@@ -1,4 +1,6 @@
-
+/**
+ * @author Ben Smith, David Olinger
+ */
 public class CaesarCipher extends Cipher{
 	private final static int NUM_LETTERS = 26;
 	private final int shiftAmount;
@@ -9,7 +11,10 @@ public class CaesarCipher extends Cipher{
 	public CaesarCipher(int amt){
 		shiftAmount = amt;
 	}
-	
+	/**
+	 * Deep copy constructor
+	 * @param other = the CeaserCipher that is being copied
+	 */
 	public CaesarCipher(CaesarCipher other){
 		this.shiftAmount = other.shiftAmount;
 	}

@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+/**
+ * @author Ben Smith, David Olinger
+ */
 public class VigenereCipher extends Cipher {
 	
 	private ArrayList<CaesarCipher> subCiphers;
@@ -20,7 +23,11 @@ public class VigenereCipher extends Cipher {
 			subCiphers.add(new CaesarCipher(amt));
 		}
 	}
-	
+
+	/**
+	 * Deep copy constructor
+	 * @param other = the VignereCipher that is being copied
+	 */
 	public VigenereCipher(VigenereCipher other){
 		super();
 		this.subCiphers = new ArrayList<CaesarCipher>();
