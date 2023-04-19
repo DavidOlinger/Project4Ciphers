@@ -11,8 +11,7 @@ public class CaesarCipher extends Cipher{
 	}
 	
 	public CaesarCipher(CaesarCipher other){
-		// TODO: complete this copy constructor
-		shiftAmount =0; //stub
+		this.shiftAmount = other.shiftAmount;
 	}
 	
 	@Override

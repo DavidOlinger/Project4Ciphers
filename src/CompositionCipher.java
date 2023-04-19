@@ -10,6 +10,9 @@ public class CompositionCipher extends Cipher {
 
     public CompositionCipher(CompositionCipher other){
 
+        for (int i = 0; i < other.ciphers.size(); i++) {
+            this.add(other.ciphers.get(i));
+        }
     }
 @Override
     public char encrypt(char c){
@@ -34,9 +37,14 @@ public class CompositionCipher extends Cipher {
     else return c;
 
 }
-@Override
-    public Cipher newCopy(){
-        return null; // stub
+
+    /**
+     * Creates a duplicate of the current Cypher by calling the copy constructor on itself.
+     * @return
+     */
+    @Override
+    public Cipher newCopy() {
+        return new CompositionCipher(this);
     }
 
     public void add(Cipher theCipher){
