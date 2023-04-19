@@ -9,9 +9,9 @@ public class CompositionCipher extends Cipher {
     }
 
     public CompositionCipher(CompositionCipher other){
-
+        this.ciphers = new ArrayList<>();
         for (int i = 0; i < other.ciphers.size(); i++) {
-            this.add(other.ciphers.get(i));
+            this.add(other.ciphers.get(i).newCopy());
         }
     }
 @Override
