@@ -47,14 +47,10 @@ public class CompositionCipher extends Cipher {
      */
     @Override
     public char decrypt(char c){
-    if(Character.isAlphabetic(c)){
         for (int i = 0; i < ciphers.size(); i++) {
-            c = ciphers.get(i).decrypt(c);
+            c = ciphers.get(ciphers.size()-(i+1)).decrypt(c);
         }
         return c;
-    }
-    else return c;
-
 }
 
     /**
@@ -71,7 +67,7 @@ public class CompositionCipher extends Cipher {
      * @param theCipher = the cipher to be added to the list
      */
     public void add(Cipher theCipher){
-        ciphers.add(theCipher);
+        ciphers.add(theCipher.newCopy());
     }
 
 
